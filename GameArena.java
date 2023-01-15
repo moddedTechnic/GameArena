@@ -8,12 +8,12 @@ import java.lang.Class;
 import java.lang.reflect.*;
 
 /**
- * This class provides a simple window in which grahical objects can be drawn.
+ * This class provides a simple window in which graphical objects can be drawn.
  *
  * @author Joe Finney
  */
 public class GameArena extends JPanel implements Runnable, KeyListener, MouseListener, MouseMotionListener {
-    // Size of playarea
+    // Size of play area
     private JFrame frame;
     private int arenaWidth;
     private int arenaHeight;
@@ -173,7 +173,7 @@ public class GameArena extends JPanel implements Runnable, KeyListener, MouseLis
 
     /**
      * Retrieves the JPanel on which this gameArena is drawn, so that it can be integrated into
-     * a users application.
+     * a user's application.
      * <p>
      * n.b. This should only be called if this GameArena was constructed without its own JFrame
      *
@@ -199,7 +199,7 @@ public class GameArena extends JPanel implements Runnable, KeyListener, MouseLis
         if (!rendered) {
             this.setSize(arenaWidth, arenaHeight);
 
-            // Create a buffer the same size of the window, which we can reuse from frame to frame to improve performance.
+            // Create a buffer the same size of the window, which we can reuse across frames to improve performance.
             buffer = new BufferedImage(arenaWidth, arenaHeight, BufferedImage.TYPE_INT_ARGB);
             graphics = buffer.createGraphics();
             graphics.setRenderingHints(renderingHints);
@@ -209,7 +209,7 @@ public class GameArena extends JPanel implements Runnable, KeyListener, MouseLis
         }
 
         if (frame == null) {
-            // Find the JFrame we have been added to, and attach a KeyListner
+            // Find the JFrame we have been added to, and attach a KeyListener
             frame = (JFrame) SwingUtilities.getWindowAncestor(this);
 
             if (frame != null)
@@ -272,7 +272,7 @@ public class GameArena extends JPanel implements Runnable, KeyListener, MouseLis
 
     //
     // Shouldn't really handle colour this way, but the student's haven't been introduced
-    // to constants properly yet, hmmm....
+    // to constants properly yet
     //
     private Color getColourFromString(String col) {
         Color c = colours.get(col.toUpperCase());
@@ -293,9 +293,9 @@ public class GameArena extends JPanel implements Runnable, KeyListener, MouseLis
     }
 
     /**
-     * Adds a given Object to the drawlist, maintaining z buffering order.
+     * Adds a given Object to the draw-list, maintaining z buffering order.
      *
-     * @param o the object to add to the drawlist.
+     * @param o the object to add to the draw-list.
      */
     private void addThing(Object o, int layer) {
         boolean added = false;
@@ -346,9 +346,9 @@ public class GameArena extends JPanel implements Runnable, KeyListener, MouseLis
     }
 
     /**
-     * Remove an object from the drawlist.
+     * Remove an object from the draw-list.
      *
-     * @param o the object to remove from the drawlist.
+     * @param o the object to remove from the draw-list.
      */
     private void removeObject(Object o) {
         synchronized (this) {
@@ -476,7 +476,7 @@ public class GameArena extends JPanel implements Runnable, KeyListener, MouseLis
      * Check if an ASCII A-Z or a-z letter key has been pressed.
      *
      * @param key the ASCII A-Z or a-z char to check if it has been pressed.
-     * @return whether or not that char has been pressed.
+     * @return whether that char has been pressed.
      */
     public boolean letterPressed(char key) {
         if (Character.isLetter(key))
@@ -666,7 +666,7 @@ public class GameArena extends JPanel implements Runnable, KeyListener, MouseLis
     }
 
     /**
-     * Gathers location informaiton on the mouse pointer.
+     * Gathers location information on the mouse pointer.
      *
      * @return the current X coordinate of the mouse pointer in the GameArena.
      */
@@ -675,7 +675,7 @@ public class GameArena extends JPanel implements Runnable, KeyListener, MouseLis
     }
 
     /**
-     * Gathers location informaiton on the mouse pointer.
+     * Gathers location information on the mouse pointer.
      *
      * @return the current Y coordinate of the mouse pointer in the GameArena.
      */

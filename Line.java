@@ -15,12 +15,12 @@ public class Line {
     private double yEnd;                        // The Y coordinate of the end of this line
     private double width;                        // The thickness of the line
     private double arrowSize;                    // Size of the arrowhead on this line
-    private int[] arrowX = new int[3];            // Optinal coordinates of an arrowhead on this line (x)
-    private int[] arrowY = new int[3];            // Optinal coordinates of an arrowhead on this line (y)
+    private int[] arrowX = new int[3];            // Optional coordinates of an arrowhead on this line (x)
+    private int[] arrowY = new int[3];            // Optional coordinates of an arrowhead on this line (y)
 
     private int layer;                            // The layer this line is drawn on
     private String colour = "WHITE";            // The colour of this line
-    // Permissable colours are:
+    // Permissible colours are:
     // BLACK, BLUE, CYAN, DARKGREY, GREY,
     // GREEN, DARKGREEN, LIGHTGREY, MAGENTA, ORANGE,
     // PINK, RED, WHITE, YELLOW, BROWN
@@ -85,7 +85,7 @@ public class Line {
     /**
      * Determines the length of this line.
      *
-     * @return the lenght of this line.
+     * @return the length of this line.
      */
     public double getLength() {
         double lx = xEnd - xStart;
@@ -151,7 +151,7 @@ public class Line {
     /**
      * Determines the x-coordinates of the points that form this lines arrowhead.
      *
-     * @return An array of three x coorindates.
+     * @return An array of three x coordinates.
      */
     public int[] getArrowX() {
         return arrowX;
@@ -160,7 +160,7 @@ public class Line {
     /**
      * Determines the y-coordinates of the points that form this lines arrowhead.
      *
-     * @return An array of three y coorindates.
+     * @return An array of three y coordinates.
      */
     public int[] getArrowY() {
         return arrowY;
@@ -174,7 +174,7 @@ public class Line {
      * @param x2        The x co-ordinate of the end of the Line (in pixels)
      * @param y2        The y co-ordinate of the end of the Line (in pixels)
      * @param thickness The width of the Line (in pixels)
-     * @param col       The colour of the Line (Permissable colours are: BLACK, BLUE, CYAN, DARKGREY, GREY, GREEN, LIGHTGREY, MAGENTA, ORANGE, PINK, RED, WHITE, YELLOW or ##RRGGBB)
+     * @param col       The colour of the Line (Permissible colours are: BLACK, BLUE, CYAN, DARKGREY, GREY, GREEN, LIGHTGREY, MAGENTA, ORANGE, PINK, RED, WHITE, YELLOW or ##RRGGBB)
      * @param lay       The layer the Line is to be drawn on. Objects with a higher layer number are always drawn on top of those with lower layer numbers.
      */
     public Line(double x1, double y1, double x2, double y2, double thickness, String col, int lay) {
@@ -193,7 +193,7 @@ public class Line {
      * @param x2        The x co-ordinate of the end of the Line (in pixels)
      * @param y2        The y co-ordinate of the end of the Line (in pixels)
      * @param thickness The width of the Line (in pixels)
-     * @param col       The colour of the Line (Permissable colours are: BLACK, BLUE, CYAN, DARKGREY, GREY, GREEN, LIGHTGREY, MAGENTA, ORANGE, PINK, RED, WHITE, YELLOW or ##RRGGBB)
+     * @param col       The colour of the Line (Permissible colours are: BLACK, BLUE, CYAN, DARKGREY, GREY, GREEN, LIGHTGREY, MAGENTA, ORANGE, PINK, RED, WHITE, YELLOW or ##RRGGBB)
      */
     public Line(double x1, double y1, double x2, double y2, double thickness, String col) {
         width = thickness;
@@ -217,7 +217,7 @@ public class Line {
         double arrowSize = width * this.getArrowSize();
         double arrowRatio = 1.0 - (arrowSize / length);
 
-        // Update arrowHead cooridnates
+        // Update arrowHead coordinates
         arrowX[0] = (int) xEnd;
         arrowX[1] = (int) ((xStart + lx * arrowRatio) - dy * arrowSize);
         arrowX[2] = (int) ((xStart + lx * arrowRatio) + dy * arrowSize);

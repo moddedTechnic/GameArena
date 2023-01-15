@@ -15,7 +15,7 @@ public class Ball {
     private int layer;                    // The layer of this ball is on.
     private String colour;                // The colour of this Ball
 
-    // Permissable colours are:
+    // Permissible colours are:
     // BLACK, BLUE, CYAN, DARKGREY, GREY,
     // GREEN, LIGHTGREY, MAGENTA, ORANGE,
     // PINK, RED, WHITE, YELLOW or #RRGGBB
@@ -26,7 +26,7 @@ public class Ball {
      * @param x        The x co-ordinate of centre of the Ball (in pixels)
      * @param y        The y co-ordinate of centre of the Ball (in pixels)
      * @param diameter The diameter of the Ball (in pixels)
-     * @param col      The colour of the Ball (Permissable colours are: BLACK, BLUE, CYAN, DARKGREY, GREY, GREEN, LIGHTGREY, MAGENTA, ORANGE, PINK, RED, WHITE, YELLOW or ##RRGGBB)
+     * @param col      The colour of the Ball (Permissible colours are: BLACK, BLUE, CYAN, DARKGREY, GREY, GREEN, LIGHTGREY, MAGENTA, ORANGE, PINK, RED, WHITE, YELLOW or ##RRGGBB)
      */
     public Ball(double x, double y, double diameter, String col) {
         this.xPosition = x;
@@ -42,7 +42,7 @@ public class Ball {
      * @param x        The x co-ordinate of centre of the Ball (in pixels)
      * @param y        The y co-ordinate of centre of the Ball (in pixels)
      * @param diameter The diameter of the Ball (in pixels)
-     * @param col      The colour of the Ball (Permissable colours are: BLACK, BLUE, CYAN, DARKGREY, GREY, GREEN, LIGHTGREY, MAGENTA, ORANGE, PINK, RED, WHITE, YELLOW or ##RRGGBB)
+     * @param col      The colour of the Ball (Permissible colours are: BLACK, BLUE, CYAN, DARKGREY, GREY, GREEN, LIGHTGREY, MAGENTA, ORANGE, PINK, RED, WHITE, YELLOW or ##RRGGBB)
      * @param layer    The layer this ball is to be drawn on. Objects with a higher layer number are always drawn on top of those with lower layer numbers.
      */
     public Ball(double x, double y, double diameter, String col, int layer) {
@@ -137,7 +137,7 @@ public class Ball {
     /**
      * Sets the colour of this Ball.
      *
-     * @param c the new colour of this Ball, as a String value. Permissable colours are: BLACK, BLUE, CYAN, DARKGREY, GREY, GREEN, LIGHTGREY, MAGENTA, ORANGE, PINK, RED, WHITE, YELLOW or #RRGGBB.
+     * @param c the new colour of this Ball, as a String value. Permissible colours are: BLACK, BLUE, CYAN, DARKGREY, GREY, GREEN, LIGHTGREY, MAGENTA, ORANGE, PINK, RED, WHITE, YELLOW or #RRGGBB.
      */
     public void setColour(String c) {
         colour = c;
@@ -146,8 +146,8 @@ public class Ball {
     /**
      * Moves this Ball by the given amount.
      *
-     * @param dx the distance to move on the x axis (in pixels)
-     * @param dy the distance to move on the y axis (in pixels)
+     * @param dx the distance to move on the x-axis (in pixels)
+     * @param dy the distance to move on the y-axis (in pixels)
      */
     public void move(double dx, double dy) {
         xPosition += dx;

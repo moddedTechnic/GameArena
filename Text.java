@@ -17,7 +17,7 @@ public class Text {
     private String text;                // The actual text to display
     private String colour;                // The colour of this text
 
-    // Permissable colours are:
+    // Permissible colours are:
     // BLACK, BLUE, CYAN, DARKGREY, GREY,
     // GREEN, DARKGREEN, LIGHTGREY, MAGENTA, ORANGE,
     // PINK, RED, WHITE, YELLOW, BROWN
@@ -71,7 +71,7 @@ public class Text {
     /**
      * Obtains the actual text contained in this object.
      *
-     * @return a the text to be displayed.
+     * @return the text to be displayed.
      */
     public String getText() {
         return text;
@@ -90,10 +90,10 @@ public class Text {
      * Constructor. Creates a new piece of text at the given coordinates.
      *
      * @param text  The text to display
-     * @param size  The font size of of the text
+     * @param size  The font size of the text
      * @param x     The x co-ordinate of the text
      * @param y     The y co-ordinate of the text
-     * @param col   The colour of the line (Permissable colours are: BLACK, BLUE, CYAN, DARKGREY, GREY, GREEN, LIGHTGREY, MAGENTA, ORANGE, PINK, RED, WHITE, YELLOW or ##RRGGBB)
+     * @param col   The colour of the line (Permissible colours are: BLACK, BLUE, CYAN, DARKGREY, GREY, GREEN, LIGHTGREY, MAGENTA, ORANGE, PINK, RED, WHITE, YELLOW or ##RRGGBB)
      * @param layer The layer this line is to be drawn on. Objects with a higher layer number are always drawn on top of those with lower layer numbers.
      */
     public Text(String text, int size, double x, double y, String col, int layer) {
@@ -109,10 +109,10 @@ public class Text {
      * Constructor. Creates a new piece of text at the given coordinates.
      *
      * @param text The text to display
-     * @param size The font size of of the text
+     * @param size The font size of the text
      * @param x    The x co-ordinate of the text
      * @param y    The y co-ordinate of the text
-     * @param col  The colour of the line (Permissable colours are: BLACK, BLUE, CYAN, DARKGREY, GREY, GREEN, LIGHTGREY, MAGENTA, ORANGE, PINK, RED, WHITE, YELLOW or ##RRGGBB)
+     * @param col  The colour of the line (Permissible colours are: BLACK, BLUE, CYAN, DARKGREY, GREY, GREEN, LIGHTGREY, MAGENTA, ORANGE, PINK, RED, WHITE, YELLOW or ##RRGGBB)
      */
     public Text(String text, int size, double x, double y, String col) {
         this.xPosition = x;
@@ -135,7 +135,7 @@ public class Text {
     /**
      * Changes the colour of this text to the given value
      *
-     * @param colour The new colour of this text. (Permissable colours are: BLACK, BLUE, CYAN, DARKGREY, GREY, GREEN, LIGHTGREY, MAGENTA, ORANGE, PINK, RED, WHITE, YELLOW or #RRGGBB)
+     * @param colour The new colour of this text. (Permissible colours are: BLACK, BLUE, CYAN, DARKGREY, GREY, GREEN, LIGHTGREY, MAGENTA, ORANGE, PINK, RED, WHITE, YELLOW or #RRGGBB)
      */
     public void setColour(String colour) {
         this.colour = colour;

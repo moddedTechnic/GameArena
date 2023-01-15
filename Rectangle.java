@@ -1,6 +1,6 @@
 /**
  * Models a simple, solid rectangle.
- * This class represents a Rectabgle object. When combined with the GameArena class,
+ * This class represents a Rectangle object. When combined with the GameArena class,
  * instances of the Rectangle class can be displayed on the screen.
  */
 public class Rectangle {
@@ -16,7 +16,7 @@ public class Rectangle {
     private int layer;                // The layer this Rectangle is on.
     private String colour;                // The colour of this Rectangle
 
-    // Permissable colours are:
+    // Permissible colours are:
     // BLACK, BLUE, CYAN, DARKGREY, GREY,
     // GREEN, LIGHTGREY, MAGENTA, ORANGE,
     // PINK, RED, WHITE, YELLOW
@@ -29,7 +29,7 @@ public class Rectangle {
      * @param y   The y co-ordinate position of top left corner of the Rectangle (in pixels)
      * @param w   The width of the Rectangle (in pixels)
      * @param h   The height of the Rectangle (in pixels)
-     * @param col The colour of the Rectangle (Permissable colours are: BLACK, BLUE, CYAN, DARKGREY, GREY, GREEN, LIGHTGREY, MAGENTA, ORANGE, PINK, RED, WHITE, YELLOW or #RRGGBB)
+     * @param col The colour of the Rectangle (Permissible colours are: BLACK, BLUE, CYAN, DARKGREY, GREY, GREEN, LIGHTGREY, MAGENTA, ORANGE, PINK, RED, WHITE, YELLOW or #RRGGBB)
      */
     public Rectangle(double x, double y, double w, double h, String col) {
         this.xPosition = x;
@@ -47,7 +47,7 @@ public class Rectangle {
      * @param y     The y co-ordinate position of top left corner of the Rectangle (in pixels)
      * @param w     The width of the Rectangle (in pixels)
      * @param h     The height of the Rectangle (in pixels)
-     * @param col   The colour of the Rectangle (Permissable colours are: BLACK, BLUE, CYAN, DARKGREY, GREY, GREEN, LIGHTGREY, MAGENTA, ORANGE, PINK, RED, WHITE, YELLOW or #RRGGBB)
+     * @param col   The colour of the Rectangle (Permissible colours are: BLACK, BLUE, CYAN, DARKGREY, GREY, GREEN, LIGHTGREY, MAGENTA, ORANGE, PINK, RED, WHITE, YELLOW or #RRGGBB)
      * @param layer The layer this Rectangle is to be drawn on. Objects with a higher layer number are always drawn on top of those with lower layer numbers.
      */
     public Rectangle(double x, double y, double w, double h, String col, int layer) {
@@ -152,7 +152,7 @@ public class Rectangle {
     /**
      * Sets the colour of this Rectangle.
      *
-     * @param c the new colour of this Rectangle, as a String value. Permissable colours are: BLACK, BLUE, CYAN, DARKGREY, GREY, GREEN, LIGHTGREY, MAGENTA, ORANGE, PINK, RED, WHITE, YELLOW.
+     * @param c the new colour of this Rectangle, as a String value. Permissible colours are: BLACK, BLUE, CYAN, DARKGREY, GREY, GREEN, LIGHTGREY, MAGENTA, ORANGE, PINK, RED, WHITE, YELLOW.
      */
     public void setColour(String c) {
         colour = c;
@@ -161,8 +161,8 @@ public class Rectangle {
     /**
      * Moves this Rectangle by the given amount.
      *
-     * @param dx the distance to move on the x axis (in pixels)
-     * @param dy the distance to move on the y axis (in pixels)
+     * @param dx the distance to move on the x-axis (in pixels)
+     * @param dy the distance to move on the y-axis (in pixels)
      */
     public void move(double dx, double dy) {
         xPosition += dx;
