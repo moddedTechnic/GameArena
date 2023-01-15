@@ -116,7 +116,7 @@ public class GameArena extends JPanel implements Runnable, KeyListener, MouseLis
             RenderingHints.Key key = (RenderingHints.Key) rh.getField("KEY_RESOLUTION_VARIANT").get(null);
             Object value = rh.getField("VALUE_RESOLUTION_VARIANT_DPI_FIT").get(null);
             renderingHints.put(key, value);
-        } catch (Exception e) {
+        } catch (Exception ignored) {
         }
 
         Thread t = new Thread(this);
@@ -135,7 +135,7 @@ public class GameArena extends JPanel implements Runnable, KeyListener, MouseLis
                 this.repaint();
                 Thread.sleep(10);
             }
-        } catch (InterruptedException iex) {
+        } catch (InterruptedException ignored) {
         }
 
         if (frame != null)
@@ -454,7 +454,7 @@ public class GameArena extends JPanel implements Runnable, KeyListener, MouseLis
     public void pause() {
         try {
             Thread.sleep(20);
-        } catch (Exception e) {
+        } catch (Exception ignored) {
         }
     }
 
