@@ -1,11 +1,11 @@
 import javax.swing.*;
 import java.awt.*;
-import java.awt.geom.*;
-import java.awt.image.*;
 import java.awt.event.*;
-import java.util.*;
-import java.lang.Class;
-import java.lang.reflect.*;
+import java.awt.geom.Line2D;
+import java.awt.image.BufferedImage;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * This class provides a simple window in which graphical objects can be drawn.
@@ -456,7 +456,6 @@ public class GameArena extends JPanel implements Runnable, KeyListener, MouseLis
             Thread.sleep(20);
         } catch (Exception e) {
         }
-        ;
     }
 
     /**
@@ -480,7 +479,7 @@ public class GameArena extends JPanel implements Runnable, KeyListener, MouseLis
      */
     public boolean letterPressed(char key) {
         if (Character.isLetter(key))
-            if (isAsciiAZ((int) Character.toUpperCase(key)))
+            if (isAsciiAZ(Character.toUpperCase(key)))
                 return alphasPressed[(int) Character.toUpperCase(key) - asciiAZOffset];
         return false;
     }
