@@ -15,10 +15,10 @@ public class Line {
     private double yEnd;                        // The Y coordinate of the end of this line
     private double width;                        // The thickness of the line
     private double arrowSize;                    // Size of the arrowhead on this line
-    private int[] arrowX = new int[3];            // Optional coordinates of an arrowhead on this line (x)
-    private int[] arrowY = new int[3];            // Optional coordinates of an arrowhead on this line (y)
+    private final int[] arrowX = new int[3];            // Optional coordinates of an arrowhead on this line (x)
+    private final int[] arrowY = new int[3];            // Optional coordinates of an arrowhead on this line (y)
 
-    private int layer;                            // The layer this line is drawn on
+    private final int layer;                            // The layer this line is drawn on
     private String colour = "WHITE";            // The colour of this line
     // Permissible colours are:
     // BLACK, BLUE, CYAN, DARKGREY, GREY,

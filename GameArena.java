@@ -20,9 +20,9 @@ public class GameArena extends JPanel implements Runnable, KeyListener, MouseLis
 
     private boolean exiting = false;
 
-    private ArrayList<Object> things = new ArrayList<Object>();
+    private final ArrayList<Object> things = new ArrayList<Object>();
 
-    private HashMap<String, Color> colours = new HashMap<>();
+    private final HashMap<String, Color> colours = new HashMap<>();
 
     private boolean up = false;
     private boolean down = false;
@@ -32,7 +32,7 @@ public class GameArena extends JPanel implements Runnable, KeyListener, MouseLis
     private boolean space = false;
     private boolean esc = false;
     private boolean enter = false;
-    private boolean[] alphasPressed = new boolean[26];
+    private final boolean[] alphasPressed = new boolean[26];
     private final static int asciiAZOffset = 65;
     private final static int alphabetLength = 25;
     private boolean leftMouse = false;

@@ -13,7 +13,7 @@ public class Text {
     private double xPosition;            // The X coordinate of the start of this text
     private double yPosition;            // The Y coordinate of the start of this text
     private int size;                    // The font size of this text
-    private int layer;                    // The layer this text is drawn on
+    private final int layer;                    // The layer this text is drawn on
     private String text;                // The actual text to display
     private String colour;                // The colour of this text
 
