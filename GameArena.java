@@ -465,10 +465,7 @@ public class GameArena extends JPanel implements Runnable, KeyListener, MouseLis
      * @return true or false if the ascii character value is A-Z ascii.
      */
     private boolean isAsciiAZ(int asciiVal) {
-        if (asciiVal >= asciiAZOffset && asciiVal <= asciiAZOffset + alphabetLength)
-            return true;
-
-        return false;
+        return asciiVal >= asciiAZOffset && asciiVal <= asciiAZOffset + alphabetLength;
     }
 
     /**
