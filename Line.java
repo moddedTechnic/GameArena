@@ -19,7 +19,7 @@ public class Line {
     private final int[] arrowY = new int[3];            // Optional coordinates of an arrowhead on this line (y)
 
     private final int layer;                            // The layer this line is drawn on
-    private String colour = "WHITE";            // The colour of this line
+    private final String colour;            // The colour of this line
     // Permissible colours are:
     // BLACK, BLUE, CYAN, DARKGREY, GREY,
     // GREEN, DARKGREEN, LIGHTGREY, MAGENTA, ORANGE,
