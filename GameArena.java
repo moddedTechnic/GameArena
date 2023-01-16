@@ -20,7 +20,7 @@ public class GameArena extends JPanel implements Runnable, KeyListener, MouseLis
 
     private boolean exiting = false;
 
-    private final ArrayList<Object> things = new ArrayList<Object>();
+    private final ArrayList<Object> things = new ArrayList<>();
 
     private final HashMap<String, Color> colours = new HashMap<>();
 
@@ -112,7 +112,7 @@ public class GameArena extends JPanel implements Runnable, KeyListener, MouseLis
         renderingHints.put(RenderingHints.KEY_TEXT_ANTIALIASING, RenderingHints.VALUE_TEXT_ANTIALIAS_LCD_HRGB);
 
         try {
-            Class rh = Class.forName("java.awt.RenderingHints");
+            Class<?> rh = Class.forName("java.awt.RenderingHints");
             RenderingHints.Key key = (RenderingHints.Key) rh.getField("KEY_RESOLUTION_VARIANT").get(null);
             Object value = rh.getField("VALUE_RESOLUTION_VARIANT_DPI_FIT").get(null);
             renderingHints.put(key, value);
@@ -226,20 +226,17 @@ public class GameArena extends JPanel implements Runnable, KeyListener, MouseLis
                     graphics.drawImage(backgroundImage, 0, 0, arenaWidth, arenaHeight, 0, 0, backgroundImage.getWidth(null), backgroundImage.getHeight(null), null);
 
                 for (Object o : things) {
-                    if (o instanceof Ball) {
-                        Ball b = (Ball) o;
+                    if (o instanceof Ball b) {
                         graphics.setColor(this.getColourFromString(b.getColour()));
                         graphics.fillOval((int) (b.getXPosition() - b.getSize() / 2), (int) (b.getYPosition() - b.getSize() / 2), (int) b.getSize(), (int) b.getSize());
                     }
 
-                    if (o instanceof Rectangle) {
-                        Rectangle r = (Rectangle) o;
+                    if (o instanceof Rectangle r) {
                         graphics.setColor(this.getColourFromString(r.getColour()));
                         graphics.fillRect((int) r.getXPosition(), (int) r.getYPosition(), (int) r.getWidth(), (int) r.getHeight());
                     }
 
-                    if (o instanceof Line) {
-                        Line l = (Line) o;
+                    if (o instanceof Line l) {
                         graphics.setColor(this.getColourFromString(l.getColour()));
                         graphics.setStroke(new BasicStroke((float) l.getWidth()));
 
@@ -257,8 +254,7 @@ public class GameArena extends JPanel implements Runnable, KeyListener, MouseLis
                         graphics.draw(new Line2D.Float(sx, sy, ex, ey));
                     }
 
-                    if (o instanceof Text) {
-                        Text t = (Text) o;
+                    if (o instanceof Text t) {
                         graphics.setFont(new Font("SansSerif", Font.BOLD, t.getSize()));
                         graphics.setColor(this.getColourFromString(t.getColour()));
                         graphics.drawString(t.getText(), (float) t.getXPosition(), (float) t.getYPosition());
