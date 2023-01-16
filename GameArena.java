@@ -20,7 +20,7 @@ public class GameArena extends JPanel implements Runnable, KeyListener, MouseLis
 
     private boolean exiting = false;
 
-    private final ArrayList<Object> things = new ArrayList<>();
+    private final ArrayList<GameObject> things = new ArrayList<>();
 
     private final HashMap<String, Color> colours = new HashMap<>();
 
@@ -226,67 +226,12 @@ public class GameArena extends JPanel implements Runnable, KeyListener, MouseLis
                 if (backgroundImage != null)
                     graphics.drawImage(backgroundImage, 0, 0, arenaWidth, arenaHeight, 0, 0, backgroundImage.getWidth(null), backgroundImage.getHeight(null), null);
 
-                for (Object o : things) {
-                    if (o instanceof Ball b) {
-                        graphics.setColor(this.getColourFromString(b.getColour()));
-                        graphics.fillOval((int) (b.getXPosition() - b.getSize() / 2), (int) (b.getYPosition() - b.getSize() / 2), (int) b.getSize(), (int) b.getSize());
-                    }
-
-                    if (o instanceof Rectangle r) {
-                        graphics.setColor(this.getColourFromString(r.getColour()));
-                        graphics.fillRect((int) r.getXPosition(), (int) r.getYPosition(), (int) r.getWidth(), (int) r.getHeight());
-                    }
-
-                    if (o instanceof Line l) {
-                        graphics.setColor(this.getColourFromString(l.getColour()));
-                        graphics.setStroke(new BasicStroke((float) l.getWidth()));
-
-                        float sx = (float) l.getXStart();
-                        float sy = (float) l.getYStart();
-                        float ex = (float) l.getXEnd();
-                        float ey = (float) l.getYEnd();
-
-                        if (l.getArrowSize() > 0) {
-                            float arrowRatio = (float) (1.0 - ((l.getWidth() * l.getArrowSize()) / l.getLength()));
-                            ex = sx + ((ex - sx) * arrowRatio);
-                            ey = sy + ((ey - sy) * arrowRatio);
-                            graphics.fillPolygon(l.getArrowX(), l.getArrowY(), 3);
-                        }
-                        graphics.draw(new Line2D.Float(sx, sy, ex, ey));
-                    }
-
-                    if (o instanceof Text t) {
-                        graphics.setFont(new Font("SansSerif", Font.BOLD, t.getSize()));
-                        graphics.setColor(this.getColourFromString(t.getColour()));
-                        graphics.drawString(t.getText(), (float) t.getXPosition(), (float) t.getYPosition());
-                    }
-                }
+                for (GameObject o : things)
+                    o.paint(graphics);
             }
 
             window.drawImage(buffer, this.getInsets().left, this.getInsets().top, this);
         }
-    }
-
-    //
-    // Shouldn't really handle colour this way, but the student's haven't been introduced
-    // to constants properly yet
-    //
-    private Color getColourFromString(String col) {
-        Color c = colours.get(col.toUpperCase());
-
-        if (c == null && col.startsWith("#")) {
-            int r = Integer.valueOf(col.substring(1, 3), 16);
-            int g = Integer.valueOf(col.substring(3, 5), 16);
-            int b = Integer.valueOf(col.substring(5, 7), 16);
-
-            c = new Color(r, g, b);
-            colours.put(col.toUpperCase(), c);
-        }
-
-        if (c == null)
-            c = Color.WHITE;
-
-        return c;
     }
 
     /**
@@ -294,7 +239,7 @@ public class GameArena extends JPanel implements Runnable, KeyListener, MouseLis
      *
      * @param o the object to add to the draw-list.
      */
-    private void addThing(Object o, int layer) {
+    private void addThing(GameObject o, int layer) {
         boolean added = false;
 
         if (exiting)
@@ -314,7 +259,7 @@ public class GameArena extends JPanel implements Runnable, KeyListener, MouseLis
                 // Try to insert this object into the list.
                 for (int i = 0; i < things.size(); i++) {
                     int l = 0;
-                    Object obj = things.get(i);
+                    GameObject obj = things.get(i);
 
                     if (obj instanceof Ball)
                         l = ((Ball) obj).getLayer();
@@ -347,7 +292,7 @@ public class GameArena extends JPanel implements Runnable, KeyListener, MouseLis
      *
      * @param o the object to remove from the draw-list.
      */
-    private void removeObject(Object o) {
+    private void removeObject(GameObject o) {
         synchronized (this) {
             things.remove(o);
         }

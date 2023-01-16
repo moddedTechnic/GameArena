@@ -1,10 +1,12 @@
+import java.awt.*;
+
 /**
  * Models a simple piece of text.
  * This class represents a Text object. When combined with the GameArena class,
  * instances of the Text class can be displayed on the screen to show display
  * an appropriate piece of text.
  */
-public class Text {
+public class Text extends GameObject {
     // The following instance variables define the
     // information needed to represent a line.
     // Feel free to more instance variables if you think it will
@@ -157,6 +159,13 @@ public class Text {
      */
     public void setYPosition(double y) {
         this.yPosition = y;
+    }
+
+    @Override
+    void paint(Graphics2D graphics) {
+        graphics.setFont(new Font("SansSerif", Font.BOLD, getSize()));
+        graphics.setColor(this.getColourFromString(getColour()));
+        graphics.drawString(getText(), (float) getXPosition(), (float) getYPosition());
     }
 
 }

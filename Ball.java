@@ -1,9 +1,11 @@
+import java.awt.*;
+
 /**
  * Models a simple solid sphere.
  * This class represents a Ball object. When combined with the GameArena class,
  * instances of the Ball class can be displayed on the screen.
  */
-public class Ball {
+public class Ball extends GameObject {
     // The following instance variables define the
     // information needed to represent a Ball
     // Feel free to more instance variables if you think it will
@@ -167,4 +169,15 @@ public class Ball {
 
         return distance < size / 2 + b.size / 2;
     }
+
+    @Override
+    void paint(Graphics2D graphics) {
+        graphics.setColor(getColourFromString(getColour()));
+        graphics.fillOval(
+                (int) (getXPosition() - getSize() / 2),
+                (int) (getYPosition() - getSize() / 2),
+                (int) getSize(), (int) getSize()
+        );
+    }
+
 }

@@ -1,9 +1,11 @@
+import java.awt.*;
+
 /**
  * Models a simple, solid rectangle.
  * This class represents a Rectangle object. When combined with the GameArena class,
  * instances of the Rectangle class can be displayed on the screen.
  */
-public class Rectangle {
+public class Rectangle extends GameObject {
     // The following instance variables define the
     // information needed to represent a Rectangle
     // Feel free to more instance variables if you think it will
@@ -179,4 +181,11 @@ public class Rectangle {
         return (xPosition + width > r.xPosition && xPosition < r.xPosition + r.width)
                 && (yPosition + height > r.yPosition && yPosition < r.yPosition + r.height);
     }
+
+    @Override
+    void paint(Graphics2D graphics) {
+        graphics.setColor(this.getColourFromString(getColour()));
+        graphics.fillRect((int) getXPosition(), (int) getYPosition(), (int) getWidth(), (int) getHeight());
+    }
+
 }

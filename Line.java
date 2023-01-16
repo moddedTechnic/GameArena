@@ -1,9 +1,12 @@
+import java.awt.*;
+import java.awt.geom.Line2D;
+
 /**
  * Models a simple line.
  * This class represents a Line object. When combined with the GameArena class,
  * instances of the Line class can be displayed on the screen.
  */
-public class Line {
+public class Line extends GameObject {
     // The following instance variables define the
     // information needed to represent a line.
     // Feel free to more instance variables if you think it will
@@ -226,4 +229,24 @@ public class Line {
         arrowY[1] = (int) ((yStart + ly * arrowRatio) + dx * arrowSize);
         arrowY[2] = (int) ((yStart + ly * arrowRatio) - dx * arrowSize);
     }
+
+    @Override
+    void paint(Graphics2D graphics) {
+        graphics.setColor(this.getColourFromString(getColour()));
+        graphics.setStroke(new BasicStroke((float) getWidth()));
+
+        float sx = (float) getXStart();
+        float sy = (float) getYStart();
+        float ex = (float) getXEnd();
+        float ey = (float) getYEnd();
+
+        if (getArrowSize() > 0) {
+            float arrowRatio = (float) (1.0 - ((getWidth() * getArrowSize()) / getLength()));
+            ex = sx + ((ex - sx) * arrowRatio);
+            ey = sy + ((ey - sy) * arrowRatio);
+            graphics.fillPolygon(getArrowX(), getArrowY(), 3);
+        }
+        graphics.draw(new Line2D.Float(sx, sy, ex, ey));
+    }
+
 }
