@@ -10,12 +10,12 @@ public class Text {
     // Feel free to more instance variables if you think it will
     // support your work...
 
-    private double xPosition;            // The X coordinate of the start of this text
-    private double yPosition;            // The Y coordinate of the start of this text
-    private int size;                    // The font size of this text
-    private final int layer;                    // The layer this text is drawn on
-    private String text;                // The actual text to display
-    private String colour;                // The colour of this text
+    private double xPosition;   // The X coordinate of the start of this text
+    private double yPosition;   // The Y coordinate of the start of this text
+    private int size;           // The font size of this text
+    private final int layer;    // The layer this text is drawn on
+    private String text;        // The actual text to display
+    private String colour;      // The colour of this text
 
     // Permissible colours are:
     // BLACK, BLUE, CYAN, DARKGREY, GREY,

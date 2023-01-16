@@ -9,17 +9,17 @@ public class Line {
     // Feel free to more instance variables if you think it will
     // support your work...
 
-    private double xStart;                        // The X coordinate of the start of this line
-    private double yStart;                        // The Y coordinate of the start of this line
+    private double xStart;                      // The X coordinate of the start of this line
+    private double yStart;                      // The Y coordinate of the start of this line
     private double xEnd;                        // The X coordinate of the end of this line
     private double yEnd;                        // The Y coordinate of the end of this line
-    private double width;                        // The thickness of the line
-    private double arrowSize;                    // Size of the arrowhead on this line
-    private final int[] arrowX = new int[3];            // Optional coordinates of an arrowhead on this line (x)
-    private final int[] arrowY = new int[3];            // Optional coordinates of an arrowhead on this line (y)
+    private double width;                       // The thickness of the line
+    private double arrowSize;                   // Size of the arrowhead on this line
+    private final int[] arrowX = new int[3];    // Optional coordinates of an arrowhead on this line (x)
+    private final int[] arrowY = new int[3];    // Optional coordinates of an arrowhead on this line (y)
 
-    private final int layer;                            // The layer this line is drawn on
-    private final String colour;            // The colour of this line
+    private final int layer;                    // The layer this line is drawn on
+    private final String colour;                // The colour of this line
     // Permissible colours are:
     // BLACK, BLUE, CYAN, DARKGREY, GREY,
     // GREEN, DARKGREEN, LIGHTGREY, MAGENTA, ORANGE,

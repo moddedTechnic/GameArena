@@ -9,12 +9,12 @@ public class Rectangle {
     // Feel free to more instance variables if you think it will
     // support your work...
 
-    private double xPosition;            // The X coordinate of this Rectangle
-    private double yPosition;            // The Y coordinate of this Rectangle
-    private double width;                // The width of this Rectangle
-    private double height;                // The height of this Rectangle
-    private final int layer;                // The layer this Rectangle is on.
-    private String colour;                // The colour of this Rectangle
+    private double xPosition;   // The X coordinate of this Rectangle
+    private double yPosition;   // The Y coordinate of this Rectangle
+    private double width;       // The width of this Rectangle
+    private double height;      // The height of this Rectangle
+    private final int layer;    // The layer this Rectangle is on.
+    private String colour;      // The colour of this Rectangle
 
     // Permissible colours are:
     // BLACK, BLUE, CYAN, DARKGREY, GREY,
@@ -176,6 +176,7 @@ public class Rectangle {
      * @return true of this rectangle is overlapping the rectangle r, false otherwise.
      */
     public boolean collides(Rectangle r) {
-        return (xPosition + width > r.xPosition && xPosition < r.xPosition + r.width) && (yPosition + height > r.yPosition && yPosition < r.yPosition + r.height);
+        return (xPosition + width > r.xPosition && xPosition < r.xPosition + r.width)
+                && (yPosition + height > r.yPosition && yPosition < r.yPosition + r.height);
     }
 }

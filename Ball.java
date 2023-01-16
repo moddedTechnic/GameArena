@@ -9,11 +9,11 @@ public class Ball {
     // Feel free to more instance variables if you think it will
     // support your work...
 
-    private double xPosition;            // The X coordinate of this Ball
-    private double yPosition;            // The Y coordinate of this Ball
-    private double size;                // The diameter of this Ball
-    private int layer;                    // The layer of this ball is on.
-    private String colour;                // The colour of this Ball
+    private double xPosition;   // The X coordinate of this Ball
+    private double yPosition;   // The Y coordinate of this Ball
+    private double size;        // The diameter of this Ball
+    private int layer;          // The layer of this ball is on.
+    private String colour;      // The colour of this Ball
 
     // Permissible colours are:
     // BLACK, BLUE, CYAN, DARKGREY, GREY,

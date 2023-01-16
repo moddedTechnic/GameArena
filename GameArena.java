@@ -155,9 +155,10 @@ public class GameArena extends JPanel implements Runnable, KeyListener, MouseLis
         super.setSize(width, height);
 
         if (frame != null)
-            frame.setSize(arenaWidth + frame.getInsets().left + frame.getInsets().right, arenaHeight + frame.getInsets().top + frame.getInsets().bottom);
-
-
+            frame.setSize(
+                    arenaWidth + frame.getInsets().left + frame.getInsets().right,
+                    arenaHeight + frame.getInsets().top + frame.getInsets().bottom
+            );
     }
 
     /**
