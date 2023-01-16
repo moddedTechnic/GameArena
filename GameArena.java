@@ -21,8 +21,6 @@ public class GameArena extends JPanel implements Runnable, KeyListener, MouseLis
 
     private final ArrayList<GameObject> things = new ArrayList<>();
 
-    private final HashMap<String, Color> colours = new HashMap<>();
-
     private boolean up = false;
     private boolean down = false;
     private boolean left = false;
@@ -82,21 +80,6 @@ public class GameArena extends JPanel implements Runnable, KeyListener, MouseLis
         }
 
         this.setSize(width, height);
-
-        // Add standard colours.
-        colours.put("BLACK", Color.BLACK);
-        colours.put("BLUE", Color.BLUE);
-        colours.put("CYAN", Color.CYAN);
-        colours.put("DARKGREY", Color.DARK_GRAY);
-        colours.put("GREY", Color.GRAY);
-        colours.put("GREEN", Color.GREEN);
-        colours.put("LIGHTGREY", Color.LIGHT_GRAY);
-        colours.put("MAGENTA", Color.MAGENTA);
-        colours.put("ORANGE", Color.ORANGE);
-        colours.put("PINK", Color.PINK);
-        colours.put("RED", Color.RED);
-        colours.put("WHITE", Color.WHITE);
-        colours.put("YELLOW", Color.YELLOW);
 
         // Setup graphics rendering hints for quality
         renderingHints = new HashMap<>();
