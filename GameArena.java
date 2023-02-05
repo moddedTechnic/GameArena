@@ -93,6 +93,7 @@ public class GameArena extends JPanel implements Runnable, KeyListener, MouseLis
         renderingHints.put(RenderingHints.KEY_STROKE_CONTROL, RenderingHints.VALUE_STROKE_PURE);
         renderingHints.put(RenderingHints.KEY_TEXT_ANTIALIASING, RenderingHints.VALUE_TEXT_ANTIALIAS_LCD_HRGB);
 
+        // This needs to be done as `VALUE_RESOLUTION_VARIANT_DPI_FIT` does not exist before JDK9
         try {
             Class<?> rh = Class.forName("java.awt.RenderingHints");
             RenderingHints.Key key = (RenderingHints.Key) rh.getField("KEY_RESOLUTION_VARIANT").get(null);
