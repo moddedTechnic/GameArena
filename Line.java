@@ -1,3 +1,5 @@
+package game_arena;
+
 import java.awt.*;
 import java.awt.geom.Line2D;
 
