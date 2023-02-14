@@ -28,7 +28,7 @@ public abstract class GameObject {
     // Shouldn't really handle colour this way, but the student's haven't been introduced
     // to constants properly yet
     //
-    Color getColourFromString(String colour) {
+    protected Color getColourFromString(String colour) {
         Color c = colours.get(colour.toUpperCase());
 
         if (c == null && colour.startsWith("#")) {
